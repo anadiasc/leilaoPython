@@ -13,7 +13,6 @@ class Participante():
     
         return True
 
-
     def logindoParticipante(rolParticipantes, login, senha):
         if login in rolParticipantes:
             if senha == rolParticipantes[login].senhaParticipante:

@@ -16,11 +16,12 @@ lances = {
 
 }
 
+
 def addLeilao(rolLeilao, leilao):
     rolLeilao.__setitem__(leilao.id, leilao)
 
 
-leilao1 = Leilao(1, '09/10/2022', '11:20', '09/10/2022', '21:41')
+leilao1 = Leilao(1, '09/10/2022', '11:20', '09/10/2022', '22:04')
 leilao1.inserirItem('anel', 'ouro', 100.00, False)
 leilao1.inserirItem('colar', 'prata', 50.00, False)
 leilao1.inserirItem('tiara', 'dimante', 1000.00, False)
@@ -35,10 +36,9 @@ while True:
         print('____________________________________________________')
         print(f'o leiao {leilao1.id} foi finalizado')
         for item in leilao1.itemleilao:
-            item.arrematarItem(lances)
+            arrematar = item.arrematarItem(lances)
             if item.itemArrematado == True:
-                print(f'O item {item.tituloItem} foi arrematado! \nO dono e o valor do lance é:')
-                print(item.arrematarItem(lances))
+                print(f'O item {item.tituloItem} foi arrematado! \nO novo dono é {arrematar[0]} e o valor do lance foi {arrematar[1]}')     
         print('____________________________________________________')
 
     print('Menu opções:\n1. login\n2. cadastro')

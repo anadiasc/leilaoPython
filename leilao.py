@@ -23,7 +23,7 @@ class Leilao():
             print()
             print(f'____________ ITENS DO LEILAO {id}___________')
             for item in rolLeilao[id].itemleilao:
-                print(f'Titulo: {item.tituloItem}') #\nDescrição: {item.descricaoItem}\nLance Min: {item.lanceMinimoItem}\nArrematado: {item.itemArrematado}
+                print(f'Titulo: {item.tituloItem}')
                 print()
 
     def iniciarLeilao(self): 
@@ -38,7 +38,7 @@ class Leilao():
             return False
         
 
-    def finalizarLeilao(self): #finaliza conforme o horario e a pessoa com o maior valor ofertado no prazo leva o produto
+    def finalizarLeilao(self):
         final = self.dataFinalLeilao + ' ' + self.horaFinalLeilao
 
         if datetime.strptime(final, '%d/%m/%Y %H:%M') <= datetime.now():
